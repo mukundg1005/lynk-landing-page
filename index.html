@@ -1,14 +1,74 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lynk Landing Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <h1>Welcome to Lynk</h1>
-    <p>Revolutionizing Influencer Marketing</p>
-    <button onclick="joinNow()">Join Now</button>
-    <script src="app.js"></script>
-</body>
-</html>
+import React from "react";
+import { motion } from "framer-motion";
+import "./styles.css";
 
+export default function LynkLandingPage() {
+  return (
+    <div className="bg-gradient-to-b from-purple-700 to-purple-900 text-white min-h-screen flex flex-col items-center px-6 py-10">
+      {/* Hero Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 1 }}
+        className="text-center max-w-4xl"
+      >
+        <h1 className="text-5xl font-extrabold">Lynk – The Future of Authentic Marketing</h1>
+        <p className="mt-4 text-lg">A platform where brands connect with real influencers and users to drive engagement and create winning content.</p>
+        <div className="mt-6 flex gap-6 justify-center">
+          <button className="bg-yellow-400 text-purple-900 px-6 py-3 rounded-xl font-bold text-lg hover:bg-yellow-500 transition">Join as a Creator</button>
+          <button className="bg-white text-purple-900 px-6 py-3 rounded-xl font-bold text-lg hover:bg-gray-300 transition">Launch a Brand Campaign</button>
+        </div>
+      </motion.div>
+
+      {/* How It Works Section */}
+      <motion.div 
+        initial={{ opacity: 0, x: -20 }} 
+        animate={{ opacity: 1, x: 0 }} 
+        transition={{ duration: 1, delay: 0.5 }}
+        className="mt-16 text-center max-w-5xl"
+      >
+        <h2 className="text-3xl font-bold">How It Works</h2>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 bg-purple-800 rounded-lg">
+            <h3 className="text-xl font-bold">Brands Launch Campaigns</h3>
+            <p className="mt-2">Set budgets and campaign objectives to reach engaged micro-influencers.</p>
+          </div>
+          <div className="p-6 bg-purple-800 rounded-lg">
+            <h3 className="text-xl font-bold">Users Promote & Earn</h3>
+            <p className="mt-2">Users post authentic content and earn rewards based on real engagement.</p>
+          </div>
+          <div className="p-6 bg-purple-800 rounded-lg">
+            <h3 className="text-xl font-bold">Ad Competitions</h3>
+            <p className="mt-2">Brands buy the best content created by users through a community voting system.</p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Rewards Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 1, delay: 1 }}
+        className="mt-16 text-center max-w-5xl"
+      >
+        <h2 className="text-3xl font-bold">Earn More, Engage More</h2>
+        <p className="mt-4">Earn up to <span className="font-bold">10% of the Average Order Value per quarter</span>, with unclaimed rewards rolling over to offer up to <span className="font-bold">40% in extra earnings</span>.</p>
+      </motion.div>
+
+      {/* Call to Action */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }} 
+        animate={{ opacity: 1, scale: 1 }} 
+        transition={{ duration: 1, delay: 1.5 }}
+        className="mt-16 text-center"
+      >
+        <h2 className="text-3xl font-bold">Join Lynk Today</h2>
+        <p className="mt-2">Whether you're a brand looking for authentic marketing or a creator ready to monetize your influence, Lynk is your solution.</p>
+        <div className="mt-6 flex gap-6 justify-center">
+          <button className="bg-yellow-400 text-purple-900 px-6 py-3 rounded-xl font-bold text-lg hover:bg-yellow-500 transition">Sign Up Now</button>
+          <button className="bg-white text-purple-900 px-6 py-3 rounded-xl font-bold text-lg hover:bg-gray-300 transition">Learn More</button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
