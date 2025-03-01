@@ -4,3 +4,10 @@ body {
     color: white;
     text-align: center;
 }
+button {
+    background-color: #FFD700;
+    color: #6A0DAD;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
